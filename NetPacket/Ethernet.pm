@@ -3,8 +3,8 @@
 #
 # Comments/suggestions to tpot@samba.org
 #
-# Updated by Chander Ganesan (cganesan@cpan.org) to support
-#  IEEE 802.3 packets
+# $Id: Ethernet.pm,v 1.12 2001/07/29 23:45:00 tpot Exp $
+#
 
 package NetPacket::Ethernet;
 
@@ -99,23 +99,16 @@ sub decode {
 
     if (defined($pkt)) {
 
-	my($sm_lo, $sm_hi, $dm_lo, $dm_hi, $data);
+	my($sm_lo, $sm_hi, $dm_lo, $dm_hi);
 
-	($self->{dest_mac}, $self->{src_mac}, $self->{type}, $data) = 
-	    unpack('H12H12na*' , $pkt);
+	($dm_hi, $dm_lo, $sm_hi, $sm_lo, $self->{type}, $self->{data}) = 
+	    unpack('NnNnna*' , $pkt);
 
-        # IEEE 802.3 packets use the type field as a length field.  
-        # Additionally, with these packets, its necessary to truncate the 
-        # data field using the packet length. CKG 12/20/02
-        if ($self->{type} <= hex("05dc")){ # This is an 802.3 Ethernet pkt
-            $self->{length} = $self->{type};
-            delete $self->{type};
-            my $length = $self->{length};
-            ($self->{data}, $self->{trailer}) = 
-                unpack("a" . $length . "a*", $data);
-        } else { # Not an 802.3 Ethernet Packet :-)
-            $self->{data} = $data;
-        }
+	# Convert MAC addresses to hex string to avoid representation
+	# problems
+
+	$self->{src_mac} = sprintf("%08x%04x", $sm_hi, $sm_lo);
+	$self->{dest_mac} = sprintf("%08x%04x", $dm_hi, $dm_lo);
     }
 
     # Return a blessed object
