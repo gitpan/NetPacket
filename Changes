@@ -1,0 +1,30 @@
+revision 0.2 -- 07/21/2001
+
+From TCP/IP Illustrated, Vol 1, W. Richard Stevens, pp226
+
+ "The TCP header length field gives the length of the header in
+  32-bit words.  This is required because the length of the 
+  options field is variable.  With a 4-bit field, TCP is limited
+  to a 60-byte header.  Without options, however, the normal size
+  is 20 bytes."
+
+So after massaging the 4-bit header length into a short, the options 
+length is determined by subtracting "5" -- five 32-bit words -- which
+is the static 20 byte TCP header.  
+
+In the following unpack, we must then multiply the object length times
+4 to grab the full 32-bit word ( 4 bytes ).
+
+Previously, $self->{options} would get only a 1/4th of the option 
+data and the resulting $self->{data} payload variable would contain
+several bytes of leading garbage (option) data.
+
+So *THAT'S* why that sniffer never did quite work right. ;)
+
+These are really great modules everyone.  Hope this small but somewhat
+obscure bug fix helps someone out there put these modules to good use.  
+
+Many thanks, Tim!
+
+Benjamin R. Ginter
+<bginter@asicommunications.com>

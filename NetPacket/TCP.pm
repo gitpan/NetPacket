@@ -31,7 +31,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 my $myclass;
 BEGIN {
     $myclass = __PACKAGE__;
-    $VERSION = "0.01";
+    $VERSION = "0.02";
 }
 sub Version () { "$myclass v$VERSION" }
 
@@ -107,7 +107,29 @@ sub decode {
 	my $olen = $self->{hlen} - 5;
 	$olen = 0, if ($olen < 0);  # Check for bad hlen
 
-	($self->{options}, $self->{data}) = unpack("a" . $olen . 
+	## Benjamin R. Ginter <bginter@asicommunications.com> 07/21/2001
+	##
+	## From TCP/IP Illustrated, Vol 1, W. Richard Stevens, pp226
+	##   The TCP header length field gives the length of the header in
+	##   32-bit words.  This is required because the length of the 
+	##   options field is variable.  With a 4-bit field, TCP is limited
+	##   to a 60-byte header.  Without options, however, the normal size
+	##   is 20 bytes.
+	##
+	## So after massaging the 4-bit header length above into a short,
+	## the options length is determined by subtracting "5" 32-bit words
+	## ( the standard 20 byte header ).
+	##
+	## In the following unpack, we must multiply the object length times
+	## 4 to grab the full 32-bit word ( 4 bytes ).
+	##
+	## Previously, $self->{options} would get only a 1/4th of the option 
+	## data and the resulting $self->{data} payload variable would contain
+	## several bytes of leading garbage data.
+	##
+	## So *THAT'S* why that sniffer never did quite work right. ;)
+	
+	($self->{options}, $self->{data}) = unpack("a" . $olen * 4 . 
 						   "a*", $self->{options});
     }
 

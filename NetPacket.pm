@@ -30,7 +30,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 my $myclass;
 BEGIN {
     $myclass = __PACKAGE__;
-    $VERSION = "0.01";
+    $VERSION = "0.02";
 }
 sub Version () { "$myclass v$VERSION" }
 
@@ -170,6 +170,11 @@ however contains header fields and a payload.
 =head1 AUTHOR
 
 Tim Potter E<lt>tpot@acsys.anu.edu.auE<gt>
+
+=head1 CONTRIBUTORS
+
+Benjamin R. Ginter E<lt>bginter@asicommunications.comE<gt> fixed TCP option 
+and data/payload parsing.
 
 =cut
 
