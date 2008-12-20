@@ -53,11 +53,7 @@ use constant URG => 0x20;
 use constant ECE => 0x40;
 use constant CWR => 0x80;
 
-BEGIN {
-    $myclass = __PACKAGE__;
-    $VERSION = "0.04";
-}
-sub Version () { "$myclass v$VERSION" }
+our $VERSION = '0.41_0';
 
 BEGIN {
     @ISA = qw(Exporter NetPacket);
@@ -122,21 +118,21 @@ sub decode {
 
 	# Extract flags
 	
-	$self->{hlen} = ($tmp & 0xf000) >> 12;
+	$self->{hlen}     = ($tmp & 0xf000) >> 12;
 	$self->{reserved} = ($tmp & 0x0f00) >> 8;
-	$self->{flags} = $tmp & 0x00ff;
+	$self->{flags}    =  $tmp & 0x00ff;
 	
 	# Decode variable length header and remaining data
 
 	my $olen = $self->{hlen} - 5;
-	$olen = 0, if ($olen < 0);  # Check for bad hlen
+	$olen = 0 if $olen < 0;  # Check for bad hlen
 
         # Option length is number of 32 bit words
 
-        $olen = $olen * 4;
+    $olen *= 4;
 
-	($self->{options}, $self->{data}) = unpack("a" . $olen . 
-						   "a*", $self->{options});
+	( $self->{options}, $self->{data} ) 
+        = unpack( 'a' . $olen .  'a*', $self->{options});
     }
 
     # Return a blessed object

@@ -1,0 +1,40 @@
+---
+name: NetPacket
+version: 0.41_0
+author:
+  - 'Tim Potter <tpot@samba.org>'
+  - 'Stephanie Wehner <atrak@itsx.com>'
+  - 'Yanick Champoux <yanick@cpan.org>'
+abstract: |-
+  modules to assemble/disassemble network packets at the
+  protocol level.
+license: unknown
+provides:
+  NetPacket:
+    file: lib/NetPacket.pm
+    version: 0.41_0
+  NetPacket::ARP:
+    file: lib/NetPacket/ARP.pm
+    version: 0.41_0
+  NetPacket::Ethernet:
+    file: lib/NetPacket/Ethernet.pm
+    version: 0.41_0
+  NetPacket::ICMP:
+    file: lib/NetPacket/ICMP.pm
+    version: 0.41_0
+  NetPacket::IGMP:
+    file: lib/NetPacket/IGMP.pm
+    version: 0.41_0
+  NetPacket::IP:
+    file: lib/NetPacket/IP.pm
+    version: 0.41_0
+  NetPacket::TCP:
+    file: lib/NetPacket/TCP.pm
+    version: 0.41_0
+  NetPacket::UDP:
+    file: lib/NetPacket/UDP.pm
+    version: 0.41_0
+generated_by: Module::Build version 0.280801
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
