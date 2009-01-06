@@ -53,7 +53,7 @@ use constant URG => 0x20;
 use constant ECE => 0x40;
 use constant CWR => 0x80;
 
-our $VERSION = '0.41_0';
+our $VERSION = '0.41.1';
 
 BEGIN {
     @ISA = qw(Exporter NetPacket);
@@ -164,6 +164,7 @@ sub encode {
             $self->{acknum}, $tmp, $self->{winsize}, $self->{cksum},
             $self->{urg}, $self->{options},$self->{data});
 
+
     return($packet);
 
 }
@@ -183,6 +184,7 @@ sub checksum {
     $proto = 6;
     $tcplen = ($self->{hlen} * 4)+ length($self->{data});
 
+    no warnings qw/ uninitialized /;
     $tmp = $self->{hlen} << 12;
     $tmp = $tmp | (0x0f00 & ($self->{reserved} << 8));
     $tmp = $tmp | (0x00ff & $self->{flags});
@@ -197,6 +199,9 @@ sub checksum {
             $self->{src_port}, $self->{dest_port}, $self->{seqnum},
             $self->{acknum}, $tmp, $self->{winsize}, $zero,
             $self->{urg}, $self->{options},$self->{data});
+
+    # pad packet if odd-sized
+    $packet .= "\x00" if length( $packet ) % 2;
 
     $self->{cksum} = NetPacket::htons(NetPacket::in_cksum($packet));
 }
