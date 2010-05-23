@@ -6,7 +6,7 @@ author:
   - 'Yanick Champoux <yanick@cpan.org>'
 configure_requires:
   Module::Build: 0
-generated_by: 'Module::Build version 0.3601'
+generated_by: 'Module::Build version 0.3603'
 license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,30 +15,39 @@ name: NetPacket
 provides:
   NetPacket:
     file: lib/NetPacket.pm
-    version: v0.42.0
+    version: v0.43.0
   NetPacket::ARP:
     file: lib/NetPacket/ARP.pm
-    version: v0.42.0
+    version: v0.43.0
   NetPacket::Ethernet:
     file: lib/NetPacket/Ethernet.pm
-    version: v0.42.0
+    version: v0.43.0
   NetPacket::ICMP:
     file: lib/NetPacket/ICMP.pm
-    version: v0.42.0
+    version: v0.43.0
+  NetPacket::ICMPv6:
+    file: lib/NetPacket/ICMPv6.pm
+    version: v0.43.0
   NetPacket::IGMP:
     file: lib/NetPacket/IGMP.pm
-    version: v0.42.0
+    version: v0.43.0
   NetPacket::IP:
     file: lib/NetPacket/IP.pm
-    version: v0.42.0
+    version: v0.43.0
+  NetPacket::IPv6:
+    file: lib/NetPacket/IPv6.pm
+    version: v0.43.0
+  NetPacket::PFLog:
+    file: lib/NetPacket/PFLog.pm
+    version: v0.43.0
   NetPacket::TCP:
     file: lib/NetPacket/TCP.pm
-    version: v0.42.0
+    version: v0.43.0
   NetPacket::UDP:
     file: lib/NetPacket/UDP.pm
-    version: v0.42.0
+    version: v0.43.0
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=NetPacket
   license: http://www.perlfoundation.org/artistic_license_2_0
   repository: git://github.com/yanick/netpacket.git
-version: v0.42.0
+version: v0.43.0

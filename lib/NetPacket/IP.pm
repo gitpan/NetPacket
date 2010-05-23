@@ -9,7 +9,7 @@ use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 use NetPacket;
 
-our $VERSION = '0.42.0';
+our $VERSION = '0.43.0';
 
 BEGIN {
     @ISA = qw(Exporter NetPacket);
@@ -119,7 +119,7 @@ sub decode {
 	# Decode variable length header options and remaining data in field
 
 	my $olen = $self->{hlen} - 5;
-	$olen = 0, if ($olen < 0);  # Check for bad hlen
+	$olen = 0 if $olen < 0;  # Check for bad hlen
 
 	# Option length is number of 32 bit words
 
@@ -243,7 +243,7 @@ is passed to this method.
 
 Return an IP packet encoded with the instance data specified. This
 will infer the total length of the packet automatically from the 
-payload lenth and also adjust the checksum.
+payload length and also adjust the checksum.
 
 =back
 
