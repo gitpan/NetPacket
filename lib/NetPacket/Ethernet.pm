@@ -2,11 +2,12 @@
 # NetPacket::Ethernet - Decode and encode ethernet packets.
 
 package NetPacket::Ethernet;
+BEGIN {
+  $NetPacket::Ethernet::VERSION = '0.43.1';
+}
 
 use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-
-our $VERSION = '0.43.0';
 
 BEGIN {
     @ISA = qw(Exporter NetPacket);
@@ -119,6 +120,10 @@ __END__
 =head1 NAME
 
 C<NetPacket::Ethernet> - Assemble and disassemble ethernet packets.
+
+=head1 VERSION
+
+version 0.43.1
 
 =head1 SYNOPSIS
 

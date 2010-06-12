@@ -1,21 +1,32 @@
+
 use strict;
 use warnings;
-use Module::Build;
 
-my $builder = Module::Build->new(
-    module_name        => 'NetPacket',
-    dist_version_from  => 'lib/NetPacket.pm',
-    create_license     => 1,
-    license            => 'artistic_2',
-    create_makefile_pl => 'small',
-    configure_requires => { 'Module::Build' => 0, },
-    meta_merge         => {
-        resources => {
-            repository => 'git://github.com/yanick/netpacket.git',
-            bugtracker =>
-              'http://rt.cpan.org/NoAuth/Bugs.html?Dist=NetPacket',
-        },
-    },
+use Module::Build 0.3601;
+
+
+my %module_build_args = (
+  'build_requires' => {
+    'Module::Build' => '0.3601'
+  },
+  'configure_requires' => {
+    'Module::Build' => '0.3601'
+  },
+  'dist_abstract' => 'assemble/disassemble network packets at the protocol level',
+  'dist_author' => [
+    'Yanick Champoux <yanick@cpan.org>'
+  ],
+  'dist_name' => 'NetPacket',
+  'dist_version' => '0.43.1',
+  'license' => 'artistic_2',
+  'module_name' => 'NetPacket',
+  'recommends' => {},
+  'recursive_test_files' => 1,
+  'requires' => {},
+  'script_files' => []
 );
 
-$builder->create_build_script();
+
+my $build = Module::Build->new(%module_build_args);
+
+$build->create_build_script;
