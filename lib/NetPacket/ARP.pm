@@ -3,7 +3,7 @@ BEGIN {
   $NetPacket::ARP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::ARP::VERSION = '1.3.1';
+  $NetPacket::ARP::VERSION = '1.3.2';
 }
 # ABSTRACT: Assemble and disassemble ARP (Address Resolution Protocol) packets.
 
@@ -53,7 +53,7 @@ use constant RARP_OPCODE_REPLY   => 4;
 
 sub decode {
     my $class = shift;
-    my($pkt, $parent, @rest) = @_;
+    my($pkt, $parent) = @_;
     my $self = {};
 
     # Class fields
@@ -104,8 +104,6 @@ sub encode {
 
 1;
 
-
-
 =pod
 
 =head1 NAME
@@ -114,7 +112,7 @@ NetPacket::ARP - Assemble and disassemble ARP (Address Resolution Protocol) pack
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -297,7 +295,6 @@ merchantability or fitness for a particular purpose.
 Tim Potter E<lt>tpot@samba.orgE<gt>
 
 =cut
-
 
 __END__
 

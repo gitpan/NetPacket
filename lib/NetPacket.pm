@@ -9,7 +9,7 @@ BEGIN {
   $NetPacket::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::VERSION = '1.3.1';
+  $NetPacket::VERSION = '1.3.2';
 }
 # ABSTRACT: assemble/disassemble network packets at the protocol level
 
@@ -107,7 +107,7 @@ sub ntohs
 
 1;
 
-
+__END__
 
 =pod
 
@@ -117,7 +117,7 @@ NetPacket - assemble/disassemble network packets at the protocol level
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -225,8 +225,3 @@ Stephanie Wehner <atrak@itsx.com>
 Yanick Champoux <yanick@cpan.org>
 
 =cut
-
-
-__END__
-
-

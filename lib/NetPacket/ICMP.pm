@@ -3,7 +3,7 @@ BEGIN {
   $NetPacket::ICMP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::ICMP::VERSION = '1.3.1';
+  $NetPacket::ICMP::VERSION = '1.3.2';
 }
 # ABSTRACT: Assemble and disassemble ICMP (Internet Control Message Protocol) packets. 
 
@@ -68,7 +68,7 @@ use constant ICMP_MASKREPLY       => 18;
 
 sub decode {
     my $class = shift;
-    my($pkt, $parent, @rest) = @_;
+    my($pkt, $parent) = @_;
     my $self = {};
 
     # Class fields
@@ -98,7 +98,7 @@ undef &icmp_strip;
 *icmpstrip = \&strip;
 
 sub strip {
-    my ($pkt, @rest) = @_;
+    my ($pkt) = @_;
 
     my $icmp_obj = decode($pkt);
     return $icmp_obj->{data};
@@ -148,8 +148,6 @@ sub checksum {
 
 # autoloaded methods go after the END token (&& pod) below
 
-
-
 =pod
 
 =head1 NAME
@@ -158,7 +156,7 @@ NetPacket::ICMP - Assemble and disassemble ICMP (Internet Control Message Protoc
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -325,7 +323,6 @@ Tim Potter E<lt>tpot@samba.orgE<gt>
 Stephanie Wehner E<lt>atrak@itsx.comE<gt>
 
 =cut
-
 
 __END__
 

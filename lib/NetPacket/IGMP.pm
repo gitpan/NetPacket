@@ -7,7 +7,7 @@ BEGIN {
   $NetPacket::IGMP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::IGMP::VERSION = '1.3.1';
+  $NetPacket::IGMP::VERSION = '1.3.2';
 }
 # ABSTRACT: Assemble and disassemble IGMP (Internet Group Mangement Protocol) packets. 
 
@@ -88,7 +88,7 @@ sub to_dotquad {
 
 sub decode {
     my $class = shift;
-    my($pkt, $parent, @rest) = @_;
+    my($pkt, $parent) = @_;
     my $self = {};
 
     # Class fields
@@ -146,8 +146,6 @@ sub encode {
 
 # autoloaded methods go after the END token (&& pod) below
 
-
-
 =pod
 
 =head1 NAME
@@ -156,7 +154,7 @@ NetPacket::IGMP - Assemble and disassemble IGMP (Internet Group Mangement Protoc
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -336,7 +334,6 @@ merchantability or fitness for a particular purpose.
 Tim Potter E<lt>tpot@samba.orgE<gt>
 
 =cut
-
 
 __END__
 

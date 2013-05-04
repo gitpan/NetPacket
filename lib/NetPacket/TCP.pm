@@ -9,7 +9,7 @@ BEGIN {
   $NetPacket::TCP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::TCP::VERSION = '1.3.1';
+  $NetPacket::TCP::VERSION = '1.3.2';
 }
 # ABSTRACT: Assemble and disassemble TCP (Transmission Control Protocol) packets.
 
@@ -61,7 +61,7 @@ undef &tcp_strip;
 *tcp_strip = \&strip;
 
 sub strip {
-    my ($pkt, @rest) = @_;
+    my ($pkt) = @_;
 
     my $tcp_obj = NetPacket::TCP->decode($pkt);
     return $tcp_obj->{data};
@@ -73,7 +73,7 @@ sub strip {
 
 sub decode {
     my $class = shift;
-    my($pkt, $parent, @rest) = @_;
+    my($pkt, $parent) = @_;
     my $self = {};
 
     # Class fields
@@ -153,7 +153,7 @@ sub checksum {
     my $self = shift;
     my ($ip) = @_;
     my ($packet,$zero,$tcplen,$tmp);
-    my ($src_ip, $dest_ip,$proto,$count);
+    my ($src_ip, $dest_ip,$proto);
 
     $zero = 0;
     $proto = 6;
@@ -268,7 +268,7 @@ sub parse_tcp_options {
 
 # autoloaded methods go after the END token (&& pod) below
 
-
+__END__
 
 =pod
 
@@ -278,7 +278,7 @@ NetPacket::TCP - Assemble and disassemble TCP (Transmission Control Protocol) pa
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -521,8 +521,3 @@ Tim Potter E<lt>tpot@samba.orgE<gt>
 Stephanie Wehner E<lt>atrak@itsx.comE<gt>
 
 =cut
-
-
-__END__
-
-

@@ -3,7 +3,7 @@ BEGIN {
   $NetPacket::Ethernet::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::Ethernet::VERSION = '1.3.1';
+  $NetPacket::Ethernet::VERSION = '1.3.2';
 }
 # ABSTRACT: Assemble and disassemble ethernet packets.
 
@@ -67,7 +67,7 @@ use constant VLAN_MASK_VID => 0x0FFF;
 
 sub decode {
     my $class = shift;
-    my($pkt, $parent, @rest) = @_;
+    my($pkt, $parent) = @_;
     my $self = {};
 
     # Class fields
@@ -119,7 +119,7 @@ undef &eth_strip;        # Create eth_strip alias
 *eth_strip = \&strip;
 
 sub strip {
-    my ($pkt, @rest) = @_;
+    my ($pkt) = @_;
 
     my $eth_obj = NetPacket::Ethernet->decode($pkt);
     return $eth_obj->{data};
@@ -141,8 +141,6 @@ sub encode {
 
 # autoloaded methods go after the END token (&& pod) below
 
-
-
 =pod
 
 =head1 NAME
@@ -151,7 +149,7 @@ NetPacket::Ethernet - Assemble and disassemble ethernet packets.
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -310,7 +308,6 @@ merchantability or fitness for a particular purpose.
 Tim Potter E<lt>tpot@samba.orgE<gt>
 
 =cut
-
 
 __END__
 

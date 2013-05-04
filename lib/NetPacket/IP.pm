@@ -8,7 +8,7 @@ BEGIN {
   $NetPacket::IP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::IP::VERSION = '1.3.1';
+  $NetPacket::IP::VERSION = '1.3.2';
 }
 # ABSTRACT: Assemble and disassemble IP (Internet Protocol) packets.
 
@@ -96,7 +96,7 @@ sub to_dotquad {
 
 sub decode {
     my $class = shift;
-    my($pkt, $parent, @rest) = @_;
+    my($pkt, $parent) = @_;
     my $self = {};
 
     # Class fields
@@ -156,7 +156,7 @@ undef &ip_strip;           # Create ip_strip alias
 *ip_strip = \&strip;
 
 sub strip {
-    my ($pkt, @rest) = @_;
+    my ($pkt) = @_;
 
     my $ip_obj = NetPacket::IP->decode($pkt);
     return $ip_obj->{data};
@@ -213,8 +213,6 @@ sub encode {
 
 # autoloaded methods go after the END token (&& pod) below
 
-
-
 =pod
 
 =head1 NAME
@@ -223,7 +221,7 @@ NetPacket::IP - Assemble and disassemble IP (Internet Protocol) packets.
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -431,7 +429,6 @@ Tim Potter E<lt>tpot@samba.orgE<gt>
 Stephanie Wehner E<lt>atrak@itsx.comE<gt>
 
 =cut
-
 
 __END__
 

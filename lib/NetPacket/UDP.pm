@@ -7,7 +7,7 @@ BEGIN {
   $NetPacket::UDP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::UDP::VERSION = '1.3.1';
+  $NetPacket::UDP::VERSION = '1.3.2';
 }
 # ABSTRACT: Assemble and disassemble UDP (User Datagram Protocol) packets.
 
@@ -45,7 +45,7 @@ BEGIN {
 
 sub decode {
     my $class = shift;
-    my($pkt, $parent, @rest) = @_;
+    my($pkt, $parent) = @_;
     my $self = {};
 
     # Class fields
@@ -75,10 +75,7 @@ undef &udp_strip;
 *udp_strip = \&strip;
 
 sub strip {
-    my ($pkt, @rest) = @_;
-
-    my $tcp_obj = decode($pkt);
-    return $tcp_obj->data;
+    return decode(__PACKAGE__,shift)->{data};
 }   
 
 #
@@ -137,7 +134,7 @@ sub checksum {
 
 1;
 
-
+__END__
 
 =pod
 
@@ -147,7 +144,7 @@ NetPacket::UDP - Assemble and disassemble UDP (User Datagram Protocol) packets.
 
 =head1 VERSION
 
-version 1.3.1
+version 1.3.2
 
 =head1 SYNOPSIS
 
@@ -342,7 +339,3 @@ Stephanie Wehner E<lt>atrak@itsx.comE<gt>
 Yanick Champoux <yanick@cpan.org>
 
 =cut
-
-
-__END__
-

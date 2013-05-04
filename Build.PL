@@ -7,11 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Carp" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
     "Module::Build" => "0.3601",
-    "Scalar::Util" => 0,
-    "Test::More" => "0.94",
-    "perl" => "5.004"
+    "Test::More" => "0.88"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
@@ -21,7 +20,7 @@ my %module_build_args = (
     "Yanick Champoux <yanick\@cpan.org>"
   ],
   "dist_name" => "NetPacket",
-  "dist_version" => "1.3.1",
+  "dist_version" => "1.3.2",
   "license" => "artistic_2",
   "module_name" => "NetPacket",
   "recommends" => {},
