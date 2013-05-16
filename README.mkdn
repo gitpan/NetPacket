@@ -4,7 +4,7 @@ NetPacket - assemble/disassemble network packets at the protocol level
 
 # VERSION
 
-version 1.3.2
+version 1.3.3
 
 # SYNOPSIS
 

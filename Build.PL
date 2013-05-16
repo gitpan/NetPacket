@@ -17,10 +17,12 @@ my %module_build_args = (
   },
   "dist_abstract" => "assemble/disassemble network packets at the protocol level",
   "dist_author" => [
+    "Tim Potter <tpot\@samba.org>",
+    "Stephanie Wehner <atrak\@itsx.com>",
     "Yanick Champoux <yanick\@cpan.org>"
   ],
   "dist_name" => "NetPacket",
-  "dist_version" => "1.3.2",
+  "dist_version" => "1.3.3",
   "license" => "artistic_2",
   "module_name" => "NetPacket",
   "recommends" => {},

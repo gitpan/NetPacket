@@ -7,7 +7,7 @@ BEGIN {
   $NetPacket::UDP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::UDP::VERSION = '1.3.2';
+  $NetPacket::UDP::VERSION = '1.3.3';
 }
 # ABSTRACT: Assemble and disassemble UDP (User Datagram Protocol) packets.
 
@@ -144,7 +144,7 @@ NetPacket::UDP - Assemble and disassemble UDP (User Datagram Protocol) packets.
 
 =head1 VERSION
 
-version 1.3.2
+version 1.3.3
 
 =head1 SYNOPSIS
 
