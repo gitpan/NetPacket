@@ -41,8 +41,10 @@
       },
       "test" : {
          "requires" : {
-            "File::Find" : "0",
-            "File::Temp" : "0",
+            "Errno" : "0",
+            "File::Spec" : "0",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
             "Test::More" : "0.88"
          }
       }
@@ -50,35 +52,39 @@
    "provides" : {
       "NetPacket" : {
          "file" : "lib/NetPacket.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
       },
       "NetPacket::ARP" : {
          "file" : "lib/NetPacket/ARP.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
       },
       "NetPacket::Ethernet" : {
          "file" : "lib/NetPacket/Ethernet.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
       },
       "NetPacket::ICMP" : {
          "file" : "lib/NetPacket/ICMP.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
       },
       "NetPacket::IGMP" : {
          "file" : "lib/NetPacket/IGMP.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
       },
       "NetPacket::IP" : {
          "file" : "lib/NetPacket/IP.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
       },
       "NetPacket::TCP" : {
          "file" : "lib/NetPacket/TCP.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
       },
       "NetPacket::UDP" : {
          "file" : "lib/NetPacket/UDP.pm",
-         "version" : "v1.3.3"
+         "version" : "v1.4.0"
+      },
+      "NetPacket::USBMon" : {
+         "file" : "lib/NetPacket/USBMon.pm",
+         "version" : "v1.4.0"
       }
    },
    "release_status" : "stable",
@@ -94,9 +100,11 @@
          "web" : "https://github.com/yanick/netpacket"
       }
    },
-   "version" : "1.3.3",
+   "version" : "1.4.0",
    "x_authority" : "cpan:YANICK",
    "x_contributors" : [
+      "Ben Magistro <koncept1@gmail.com>",
+      "Lubomir Rintel <lkundrak@v3.sk>",
       "Robin Lee <cheeselee@fedoraproject.org>",
       "Stan Schwertly <stan@linode.com>",
       "Stephanie Wehner <atrak@cpan.org>",

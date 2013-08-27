@@ -9,7 +9,7 @@ BEGIN {
   $NetPacket::TCP::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::TCP::VERSION = '1.3.3';
+  $NetPacket::TCP::VERSION = '1.4.0';
 }
 # ABSTRACT: Assemble and disassemble TCP (Transmission Control Protocol) packets.
 
@@ -302,14 +302,14 @@ NetPacket::TCP - Assemble and disassemble TCP (Transmission Control Protocol) pa
 
 =head1 VERSION
 
-version 1.3.3
+version 1.4.0
 
 =head1 SYNOPSIS
 
   use NetPacket::TCP;
 
   $tcp_obj = NetPacket::TCP->decode($raw_pkt);
-  $tcp_pkt = NetPacket::TCP->encode($ip_pkt);
+  $tcp_pkt = $tcp_obj->encode($ip_pkt);
   $tcp_data = NetPacket::TCP::strip($raw_pkt);
 
 =head1 DESCRIPTION
