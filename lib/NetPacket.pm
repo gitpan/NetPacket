@@ -9,7 +9,7 @@ BEGIN {
   $NetPacket::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::VERSION = '1.4.2';
+  $NetPacket::VERSION = '1.4.3';
 }
 # ABSTRACT: assemble/disassemble network packets at the protocol level
 
@@ -117,7 +117,7 @@ NetPacket - assemble/disassemble network packets at the protocol level
 
 =head1 VERSION
 
-version 1.4.2
+version 1.4.3
 
 =head1 SYNOPSIS
 

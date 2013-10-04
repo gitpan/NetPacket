@@ -19,13 +19,14 @@ my %module_build_args = (
     "Yanick Champoux <yanick\@cpan.org>"
   ],
   "dist_name" => "NetPacket",
-  "dist_version" => "1.4.2",
+  "dist_version" => "1.4.3",
   "license" => "artistic_2",
   "module_name" => "NetPacket",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "constant" => 0,
+    "perl" => "v5.10.0",
     "strict" => 0,
     "vars" => 0,
     "warnings" => 0

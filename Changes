@@ -1,5 +1,12 @@
 revision history for NetPacket
 
+1.4.3 2013-10-03
+ [BUG FIXES]
+ - Unpack data in LittleEndian format. (GH#4, k0da)
+
+ [STATISTICS]
+ - code churn: 3 files changed, 62 insertions(+), 27 deletions(-)
+
 1.4.2 2013-09-25
  [BUG FIXES]
  - Dist::Zilla::Plugin::Test::Compile was causing test to potentially hang

@@ -3,8 +3,11 @@ BEGIN {
   $NetPacket::USBMon::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::USBMon::VERSION = '1.4.2';
+  $NetPacket::USBMon::VERSION = '1.4.3';
 }
+#ABSTRACT: Assemble and disassemble USB packets captured via Linux USBMon interface.
+
+use 5.10.0;
 
 use strict;
 use vars qw(@ISA @EXPORT_OK %EXPORT_TAGS);
@@ -65,14 +68,14 @@ sub decode
     my($id, $type, $xfer_type, $epnum, $devnum, $busnum, $flag_setup,
         $flag_data, $ts_sec, $ts_usec, $status, $length, $len_cap,
         $s, $interval, $start_frame, $xfer_flags, $ndesc, $rest) =
-        unpack('a8CCCCSCCa8liIIa8llLLa*', $packet);
+        unpack('a8CCCCS<CCa8l<i<I<I<a8l<l<L<L<a*', $packet);
 
-    # Try to grok quads. We may loose some address information with 32-bit
+    # Try to grok quads. We may lose some address information with 32-bit
     # Perl parsing 64-bit captures, or timestamp after 2038. Still the best
     # we can do.
     eval {
-      $id = unpack ('Q', $id);
-      $ts_sec = unpack ('Q', $ts_sec);
+      $id = unpack ('Q<', $id);
+      $ts_sec = unpack ('Q<', $ts_sec);
     };
     if ($@) {
       ($id) = unpack ('LL', $id);
@@ -115,7 +118,7 @@ sub decode
 
         if ($setup->{bmRequestType} & USB_TYPE_VENDOR) {
            ($setup->{wValue}, $setup->{wIndex},
-                $setup->{wLength}) = unpack('S3', $rest);
+                $setup->{wLength}) = unpack('S<3', $rest);
         } else {
             # Unknown setup request;
             $setup->{data} = $rest;
@@ -127,7 +130,7 @@ sub decode
     # Isochronous descriptors
     if ($self->{xfer_type} == USB_XFER_TYPE_ISO) {
         my $iso = {};
-       ($iso->{error_count}, $iso->{numdesc}) = unpack('ii', $s);
+       ($iso->{error_count}, $iso->{numdesc}) = unpack('i<i<', $s);
         $self->{iso} = $iso;
     }
 
@@ -147,11 +150,11 @@ __END__
 
 =head1 NAME
 
-NetPacket::USBMon
+NetPacket::USBMon - Assemble and disassemble USB packets captured via Linux USBMon interface.
 
 =head1 VERSION
 
-version 1.4.2
+version 1.4.3
 
 =head1 SYNOPSIS
 
