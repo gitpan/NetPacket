@@ -6,7 +6,7 @@
       "Yanick Champoux <yanick@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300037, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "artistic_2"
    ],
@@ -52,39 +52,39 @@
    "provides" : {
       "NetPacket" : {
          "file" : "lib/NetPacket.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::ARP" : {
          "file" : "lib/NetPacket/ARP.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::Ethernet" : {
          "file" : "lib/NetPacket/Ethernet.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::ICMP" : {
          "file" : "lib/NetPacket/ICMP.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::IGMP" : {
          "file" : "lib/NetPacket/IGMP.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::IP" : {
          "file" : "lib/NetPacket/IP.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::TCP" : {
          "file" : "lib/NetPacket/TCP.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::UDP" : {
          "file" : "lib/NetPacket/UDP.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       },
       "NetPacket::USBMon" : {
          "file" : "lib/NetPacket/USBMon.pm",
-         "version" : "v1.4.3"
+         "version" : "v1.4.4"
       }
    },
    "release_status" : "stable",
@@ -100,9 +100,10 @@
          "web" : "https://github.com/yanick/netpacket"
       }
    },
-   "version" : "1.4.3",
+   "version" : "1.4.4",
    "x_authority" : "cpan:YANICK",
    "x_contributors" : [
+      "Andreas Schwab <schwab@suse.de>",
       "Ben Magistro <koncept1@gmail.com>",
       "Dinar Valeev <dvaleev@suse.de>",
       "Lubomir Rintel <lkundrak@v3.sk>",
@@ -110,7 +111,8 @@
       "Robin Lee <cheeselee@fedoraproject.org>",
       "Stan Schwertly <stan@linode.com>",
       "Stephanie Wehner <atrak@cpan.org>",
-      "Tim Potter <timpotter@cpan.org>"
+      "Tim Potter <timpotter@cpan.org>",
+      "fschlich <fsfs@debian.org>"
    ]
 }
 

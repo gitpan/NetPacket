@@ -6,6 +6,7 @@ make this distribution what it is, either via code contributions,
 patches, bug reports, help with troubleshooting, etc. A huge
 thank to all of them.
 
+	* Andreas Schwab <schwab@suse.de>
 	* Ben Magistro <koncept1@gmail.com>
 	* Dinar Valeev <dvaleev@suse.de>
 	* Lubomir Rintel <lkundrak@v3.sk>
@@ -14,3 +15,4 @@ thank to all of them.
 	* Stan Schwertly <stan@linode.com>
 	* Stephanie Wehner <atrak@cpan.org>
 	* Tim Potter <timpotter@cpan.org>
+	* fschlich <fsfs@debian.org>

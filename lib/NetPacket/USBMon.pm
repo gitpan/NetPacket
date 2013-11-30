@@ -3,7 +3,7 @@ BEGIN {
   $NetPacket::USBMon::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $NetPacket::USBMon::VERSION = '1.4.3';
+  $NetPacket::USBMon::VERSION = '1.4.4';
 }
 #ABSTRACT: Assemble and disassemble USB packets captured via Linux USBMon interface.
 
@@ -78,8 +78,8 @@ sub decode
       $ts_sec = unpack ('Q<', $ts_sec);
     };
     if ($@) {
-      ($id) = unpack ('LL', $id);
-      ($ts_sec) = unpack ('LL', $ts_sec);
+      ($id) = unpack ('L<L<', $id);
+      ($ts_sec) = unpack ('L<L<', $ts_sec);
     }
 
     my $self = {
@@ -154,7 +154,7 @@ NetPacket::USBMon - Assemble and disassemble USB packets captured via Linux USBM
 
 =head1 VERSION
 
-version 1.4.3
+version 1.4.4
 
 =head1 SYNOPSIS
 
