@@ -6,11 +6,8 @@ package NetPacket::UDP;
 BEGIN {
   $NetPacket::UDP::AUTHORITY = 'cpan:YANICK';
 }
-{
-  $NetPacket::UDP::VERSION = '1.4.4';
-}
 # ABSTRACT: Assemble and disassemble UDP (User Datagram Protocol) packets.
-
+$NetPacket::UDP::VERSION = '1.5.0';
 use strict;
 use vars qw(@ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 use NetPacket;
@@ -140,7 +137,7 @@ NetPacket::UDP - Assemble and disassemble UDP (User Datagram Protocol) packets.
 
 =head1 VERSION
 
-version 1.4.4
+version 1.5.0
 
 =head1 SYNOPSIS
 

@@ -2,11 +2,8 @@ package NetPacket::ICMP;
 BEGIN {
   $NetPacket::ICMP::AUTHORITY = 'cpan:YANICK';
 }
-{
-  $NetPacket::ICMP::VERSION = '1.4.4';
-}
 # ABSTRACT: Assemble and disassemble ICMP (Internet Control Message Protocol) packets. 
-
+$NetPacket::ICMP::VERSION = '1.5.0';
 use strict;
 use vars qw( @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 
@@ -156,7 +153,7 @@ NetPacket::ICMP - Assemble and disassemble ICMP (Internet Control Message Protoc
 
 =head1 VERSION
 
-version 1.4.4
+version 1.5.0
 
 =head1 SYNOPSIS
 

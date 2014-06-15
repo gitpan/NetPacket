@@ -4,7 +4,7 @@ NetPacket - assemble/disassemble network packets at the protocol level
 
 # VERSION
 
-version 1.4.4
+version 1.5.0
 
 # SYNOPSIS
 
@@ -43,14 +43,14 @@ This will hopefully lead to a consistent namespace making the
 Content names are all lowercase, with underscores separating multiple
 words.  The following abbreviations are recommended:
 
-	    Word		Abbreviation
-	    --------------------------------
-	    source		src
-	    destination		dest
-	    checksum		cksum
-	    identifier		id
-	    version		ver
-	    protocol		proto	       
+            Word                Abbreviation
+            --------------------------------
+            source              src
+            destination         dest
+            checksum            cksum
+            identifier          id
+            version             ver
+            protocol            proto          
 
 ## Required Methods
 
@@ -62,22 +62,22 @@ Every NetPacket:: object should have the following fields.
 
 - \_parent
 
-A link to the parent `NetPacket::` object in which this
-`NetPacket::` object is encaulated.  This field is undefined if there
-is no parent object.
+    A link to the parent `NetPacket::` object in which this
+    `NetPacket::` object is encaulated.  This field is undefined if there
+    is no parent object.
 
 - \_frame
 
-A copy of the raw data of the packet.
+    A copy of the raw data of the packet.
 
 - data
 
-This field should contain the data encapsulated in the packet (i.e any
-headers or trailers stripped off) or undef if the packet contains no
-data.  Note that in this sense, "data" is taken to mean information
-not relevant to the particular protocol being decoded.  For example,
-an ARP packet contains many header fields but no data.  A UDP datagram,
-however contains header fields and a payload.
+    This field should contain the data encapsulated in the packet (i.e any
+    headers or trailers stripped off) or undef if the packet contains no
+    data.  Note that in this sense, "data" is taken to mean information
+    not relevant to the particular protocol being decoded.  For example,
+    an ARP packet contains many header fields but no data.  A UDP datagram,
+    however contains header fields and a payload.
 
 # SEE ALSO
 

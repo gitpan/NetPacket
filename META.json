@@ -6,7 +6,7 @@
       "Yanick Champoux <yanick@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "artistic_2"
    ],
@@ -33,7 +33,9 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
             "constant" : "0",
+            "parent" : "0",
             "perl" : "v5.10.0",
             "strict" : "0",
             "vars" : "0",
@@ -52,46 +54,49 @@
    "provides" : {
       "NetPacket" : {
          "file" : "lib/NetPacket.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       },
       "NetPacket::ARP" : {
          "file" : "lib/NetPacket/ARP.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       },
       "NetPacket::Ethernet" : {
          "file" : "lib/NetPacket/Ethernet.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       },
       "NetPacket::ICMP" : {
          "file" : "lib/NetPacket/ICMP.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       },
       "NetPacket::IGMP" : {
          "file" : "lib/NetPacket/IGMP.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       },
       "NetPacket::IP" : {
          "file" : "lib/NetPacket/IP.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
+      },
+      "NetPacket::IPX" : {
+         "file" : "lib/NetPacket/IPX.pm",
+         "version" : "v1.5.0"
       },
       "NetPacket::TCP" : {
          "file" : "lib/NetPacket/TCP.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       },
       "NetPacket::UDP" : {
          "file" : "lib/NetPacket/UDP.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       },
       "NetPacket::USBMon" : {
          "file" : "lib/NetPacket/USBMon.pm",
-         "version" : "v1.4.4"
+         "version" : "v1.5.0"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "mailto" : "bug-netpacket at rt.cpan.org",
-         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=NetPacket"
+         "web" : "https://github.com/yanick/netpacket/issues"
       },
       "homepage" : "http://search.cpan.org/dist/NetPacket/",
       "repository" : {
@@ -100,11 +105,12 @@
          "web" : "https://github.com/yanick/netpacket"
       }
    },
-   "version" : "1.4.4",
+   "version" : "1.5.0",
    "x_authority" : "cpan:YANICK",
    "x_contributors" : [
       "Andreas Schwab <schwab@suse.de>",
       "Ben Magistro <koncept1@gmail.com>",
+      "Daniel Collins <solemnwarning@solemnwarning.net>",
       "Dinar Valeev <dvaleev@suse.de>",
       "Lubomir Rintel <lkundrak@v3.sk>",
       "Neil Bowers <neil@bowers.com>",

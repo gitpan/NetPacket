@@ -8,11 +8,8 @@ package NetPacket::TCP;
 BEGIN {
   $NetPacket::TCP::AUTHORITY = 'cpan:YANICK';
 }
-{
-  $NetPacket::TCP::VERSION = '1.4.4';
-}
 # ABSTRACT: Assemble and disassemble TCP (Transmission Control Protocol) packets.
-
+$NetPacket::TCP::VERSION = '1.5.0';
 use strict;
 use vars qw(@ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 use NetPacket;
@@ -302,7 +299,7 @@ NetPacket::TCP - Assemble and disassemble TCP (Transmission Control Protocol) pa
 
 =head1 VERSION
 
-version 1.4.4
+version 1.5.0
 
 =head1 SYNOPSIS
 

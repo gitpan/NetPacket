@@ -8,11 +8,8 @@ package NetPacket;
 BEGIN {
   $NetPacket::AUTHORITY = 'cpan:YANICK';
 }
-{
-  $NetPacket::VERSION = '1.4.4';
-}
 # ABSTRACT: assemble/disassemble network packets at the protocol level
-
+$NetPacket::VERSION = '1.5.0';
 
 use strict;
 use vars qw(@ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
@@ -117,7 +114,7 @@ NetPacket - assemble/disassemble network packets at the protocol level
 
 =head1 VERSION
 
-version 1.4.4
+version 1.5.0
 
 =head1 SYNOPSIS
 
